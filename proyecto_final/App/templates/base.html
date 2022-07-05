@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--FAVICON-->
+    <link href={% static "img/favicon.ico" %}>
+
+    <!--LOGO-->
+    <link href={% static "img/towerwhite.ico" %}>
+
+    <!--BOOTSTRAP 5 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <!--FONTAWESOME 5.15.4-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!--static CSS-->
+    <link href={% static "css/style.css" %} rel="stylesheet">
+
+
+    <title>{% block title %} White Tower Agency {% endblock title %}</title>
+
+</head>
+<body>
+    <div class="wrapper">
+        <style>
+            body {
+                background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url("/static/img/torreblanca.jpg");
+                background-position: center 0px;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="col-sm">
+                    <a class="navbar-brand flex-grow-1" id="navbar-content">
+                      {% block navbar-content %}
+                      <i class="text-warning fas fa-chess-rook">&nbsp;&nbsp;&nbsp; White Tower Agency 
+                      {% endblock navbar-content %}
+                      </i>
+                    </a>
+                </div>
+                <!--enlace para navegar entre páginas-->
+                {% block link %}{% endblock link %}
+            </nav>
+        </header>
+
+        <!--BLOCK CONTENT (ROOT)-->
+
+        {% block content %}{% endblock content %}
+
+        <!--inclusión de los modals para poder hacerlos funcionales-->
+        {% include 'formularios/frontend.html'%}
+        {% include 'formularios/backend.html'%}
+        {% include 'formularios/ciberseguridad.html'%}
+
+    </div> <!--- fin del wrapper--->
+
+    <footer class="bg-dark text-center text-lg-start" id="footer" style="color:azure">
+        <div class="text-center p-3" style="background-color: rgba(0,0,0,0.3);">&copy; {% now "Y" %} COPYRIGHT:
+            <a class="text-center" href="#" style="text-decoration: none;">
+                <span class="text-warning"> www.whitetoweragency.com </span>
+            </a>
+        </div>
+    </footer>
+
+
+    <!--BOTSTRAP 5 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!--INPUT MASK-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8-beta.17/jquery.inputmask.min.js" integrity="sha512-zdfH1XdRONkxXKLQxCI2Ak3c9wNymTiPh5cU4OsUavFDATDbUzLR+SYWWz0RkhDmBDT0gNSUe4xrQXx8D89JIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--SWEET ALERT-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--JS static-->
+    <script src={% static "js/script.js" %}></script>
+
+   
+    <!--EFECTO DE TIPEO-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!--SCRIPT DE EFECTO DE TIPEO-->
+    <script>
+        var typed = new Typed ('#nuevotexto', {
+            
+            strings: [
+            " para que tu empresa consiga lo que necesita",
+            " para vos consigas lo que mereces",
+            " para brindar soluciones IT end to end",
+        ],
+        typeSpeed: 40,
+        backSpeed: 15,
+        loop: true,
+        });
+    </script>
+
+    <!--limpieza automática de formulario (cuando se reinicia el modal)-->
+    <script>
+        $("#frontendModal", "##backendModal", "#ciberseguridadModal").on("hidden.bs.modal", function(){
+            $("#frontendModal form")[0].reset();
+            $("#backendModal form")[0].reset();
+            $("ciberseguridadModal form")[0].reset();
+        });
+    </script>
+
+    
+</body>
+</html>

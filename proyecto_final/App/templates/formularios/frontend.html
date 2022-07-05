@@ -1,0 +1,22 @@
+{% extends 'formularios/baseModal.html'%}
+
+<!--id del modal-->
+{% block modal-id %} id="frontendModal" {% endblock modal-id %}
+
+<!--modal title-->
+{% block modal-title %} Ofertas FRONTEND {% endblock modal-title %}
+
+<!-- FORM ACTION -->
+{% block action %} action="/email_frontend" {% endblock action %}
+
+<!--validacion del FORM-->
+{% block validation %} onsubmit= "return validateForm()" {% endblock validation %}
+
+<!--inputs de ID -->
+{% block id-nombre %} id="nombre" {% endblock id-nombre %}
+{% block id-edad %} id= "edad" {% endblock id-edad %}
+{% block id-telefono %} id="telefono" {% endblock id-telefono %}
+{% block id-email %} id= "email" {% endblock id-email %}
+{% block id-Personal %} id="Personal" {% endblock id-Personal %}
+{% block id-Experiencia %} id="Experiencia" {% endblock id-Experiencia %}
+{% block id-archivo %} id="archivo" {% endblock id-archivo %}

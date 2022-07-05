@@ -1,0 +1,23 @@
+{% extends 'formularios/baseModal.html'%}
+
+<!--id del modal-->
+{% block modal-id %} id="backendModal" {% endblock modal-id %}
+
+<!--modal title-->
+{% block modal-title %} Ofertas BACKEND {% endblock modal-title %}
+
+<!-- FORM ACTION -->
+{% block action %} action="/email_backend" {% endblock action %}
+
+
+<!--validacion del FORM-->
+{% block validation %} onsubmit= "return validateForm2()" {% endblock validation %}
+
+<!--inputs de ID -->
+{% block id-nombre %} id="nombre2" {% endblock id-nombre %}
+{% block id-edad %} id= "edad2" {% endblock id-edad %}
+{% block id-telefono %} id="telefono2" {% endblock id-telefono %}
+{% block id-email %} id= "email2" {% endblock id-email %}
+{% block id-Personal %} id="Personal2" {% endblock id-Personal %}
+{% block id-Experiencia %} id="Experiencia2" {% endblock id-Experiencia %}
+{% block id-archivo %} id="archivo2" {% endblock id-archivo %}

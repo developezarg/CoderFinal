@@ -1,0 +1,23 @@
+{% extends 'formularios/baseModal.html'%}
+
+<!--id del modal-->
+{% block modal-id %} id="ciberseguridadModal" {% endblock modal-id %}
+
+<!--modal title-->
+{% block modal-title %} Ofertas CIBERSEGURIDAD {% endblock modal-title %}
+
+<!-- FORM ACTION -->
+{% block action %} action="/email_ciberseguridad" {% endblock action %}
+
+
+<!--validacion del FORM-->
+{% block validation %} onsubmit= "return validateForm3()" {% endblock validation %}
+
+<!--inputs de ID -->
+{% block id-nombre %} id="nombre3" {% endblock id-nombre %}
+{% block id-edad %} id= "edad3" {% endblock id-edad %}
+{% block id-telefono %} id="telefono3" {% endblock id-telefono %}
+{% block id-email %} id= "email3" {% endblock id-email %}
+{% block id-Personal %} id="Personal3" {% endblock id-Personal %}
+{% block id-Experiencia %} id="Experiencia3" {% endblock id-Experiencia %}
+{% block id-archivo %} id="archivo3" {% endblock id-archivo %}

@@ -1,0 +1,63 @@
+/*---------------------------
+    #CONFIGURACION INICIO
+----------------------------*/
+html,
+body{
+    height: 100%;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/*---------------------------
+    #CONFIGURACION FOOTER
+----------------------------*/
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+
+}
+#footer,
+.push{
+    height: 50px;
+}
+
+/*---------------------------
+   #CONFIGURACION del RESTO
+----------------------------*/
+#navbar-content {
+    text-align: center;
+    color: azure;
+    margin: 25px;
+
+}
+
+/*---------------------------
+   #EFECTO texto tipeo
+----------------------------*/
+.bloqueo-posicion{
+    width: 75%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+/*---------------------------
+#OFERTAS laborales(home.html)
+----------------------------*/
+#btn-trabajo{
+    width: 250px;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-bottom: -50px;
+}
+
+/*---------------------------
+  #ETIQUETAS del formulario 
+----------------------------*/
+.etiqueta{
+    width: 45px;
+}

@@ -1,0 +1,52 @@
+<!-- base modelo (modal bootstrap 5) -->
+<div class="modal fade" {% block modal-id %} {% endblock modal-id %} tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="defaultModalLabel"><i class="fas fa-code"></i>&nbsp;{% block modal-title %} {% endblock modal-title %}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+         <form method="POST" {% block action %}{% endblock action %} {% block validation %}  {% endblock validation %} enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+            <div class="modal-body">
+                
+                <div class="input-group mb-2">
+                   <button class="etiqueta btn border-secondary bg-light"><i class="fas fa-user-alt"></i></button>     
+                   <input type="text" class="form-control nombre" {% block id-nombre %} {% endblock id-nombre %} name="nombre" placeholder="Nombre Completo">
+                </div>
+                <div class="input-group mb-2">
+                    <button class="etiqueta btn border-secondary bg-light"><i class="fas fa-user-clock"></i></button>     
+                    <input type="text" class="form-control edad" {% block id-edad %} {% endblock id-edad %} name="edad" placeholder="Edad">
+                 </div>
+                 <div class="input-group mb-2">
+                    <button class="etiqueta btn border-secondary bg-light"><i class="fas fa-envelope-square"></i></button>     
+                    <input type="text" class="form-control email" {% block id-email %} {% endblock id-email %} name="email" placeholder="xxxxxxxx@xxxx.com">
+                 </div> 
+                 <div class="input-group mb-2">
+                    <button class="etiqueta btn border-secondary bg-light"><i class="fas fa-mobile-alt"></i></button>     
+                    <input type="text" class="form-control telefono"{% block id-telefono %} {% endblock id-telefono %} name="telefono" placeholder="N° de tel sin 0 y sin 15">
+                 </div>
+                 <div class="mb-2 mt-3">
+                  <textarea class="form-control" {% block id-Personal %} {% endblock id-Personal %} name="Personal" rows="3" placeholder="Contanos acerca de vos"></textarea>
+                 </div>
+                 <div class="mb-2 mt-3">
+                  <textarea class="form-control" {% block id-Experiencia %} {% endblock id-Experiencia %} name="Experiencia" rows="3" placeholder="Contanos sobre tu/s área/s de expertise"></textarea>
+                 </div>
+                 <hr style="height: 3px;">
+                 <div class="mb-3">
+                  <div class="mb-3" style="font-size: 20px;"><i class="fas fa-file-alt"></i>&nbsp;&nbsp;Cargar CV</div>
+                  <input class="form-control" name="archivo" {% block id-archivo %} {% endblock id-archivo %} type="file" accept="application/pdf, application/msword">
+                  <div class="form-text" style="font-size: 10px;"> *Extensiones permitidas: pdf - doc - docx - odt </div>
+                 </div>
+            </div>
+           
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal">CERRAR</button>
+              <button type="button" class="btn btn-primary btn-sm">ENVIAR</button>
+            </div>
+
+        </form>
+        
+      </div>
+    </div>
+  </div>

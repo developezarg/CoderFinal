@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+<!--titulo bloqueado (pestaña de navegador)-->
+<title>{% block title %} Ofertas {% endblock title %}</title>
+
+<!--contenido barra de navegación-->
+{% block navbar-content %}
+<i class="text-warning fas fa-bone">&nbsp;&nbsp;&nbsp; Ofertas Laborales</i>
+{% endblock navbar-content %}
+
+<!--enlace para navegar entre páginas-->
+{% block link %}
+<a href="{% url 'home'%}" style="margin-right: 20px; font-size: 20px;" title="VOLVER">
+    
+    <i class="text-warning fas fa-caret-square-left"></i>
+</a>
+{% endblock link %}
+
+<!--contenido de página-->
+{% block content %}
+<div class="container mt-4" style="width:80%;">
+    <div class="justify-content-center align-items-center row">
+        <h6 class="btn btn-warning" style="width: 100%; cursor:default;">
+            <strong>OFERTAS DISPONIBLES (si están acá es porque están VIGENTES!)</strong>
+        </h6>
+        <div class="shadow-lg card p-3 mt-3" style="background-color: rgba(0,0,0,0.2)">
+            <div class="row">
+                <!--BOTON OFERTAS FRONTEND-->
+                <div class="col-xl-3 col-sm-6 p-1">
+                    <div class="card" style="background-color:transparent;">
+                        <button class="btn btn-outline-warning btn-lg trabajos" data-bs-toggle="modal" data-bs-target="#frontendModal">
+                            <i class="fas fa-desktop fa-5x"></i>
+                            <br><br>FRONTEND
+                        </button>                       
+                    </div>
+                </div>
+                <!--BOTON OFERTAS BACKEND-->
+                <div class="col-xl-3 col-sm-6 p-1">
+                    <div class="card" style="background-color:transparent;">
+                        <button class="btn btn-outline-warning btn-lg trabajos" data-bs-toggle="modal" data-bs-target="#backendModal">
+                            <i class="fas fa-server fa-5x"></i>
+                            <br><br>BACKEND
+                        </button>                       
+                    </div>
+                </div>
+                <!--BOTON OFERTAS CIBERSEGURIDAD-->
+                <div class="col-xl-3 col-sm-6 p-1">
+                    <div class="card" style="background-color:transparent;">
+                        <button class="btn btn-outline-warning btn-lg trabajos" data-bs-toggle="modal" data-bs-target="#ciberseguridadModal">
+                            <i class="fas fa-user-lock fa-5x"></i>
+                            <br><br>SEGURIDAD
+                        </button>                       
+                    </div>
+                </div>
+                <!--BOTON OFERTAS UX/UI DESIGN-->
+                <div class="col-xl-3 col-sm-6 p-1">
+                    <div class="card" style="background-color:transparent;">
+                        <button class="btn btn-outline-light btn-lg trabajos" disabled>
+                            <i class="fas fa-poo fa-5x"></i>
+                            <br><br>UX/UI DESIGN
+                        </button>                       
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div> <!--fin container-->
+
+
+
+{% endblock content %}
